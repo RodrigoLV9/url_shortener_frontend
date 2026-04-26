@@ -1,21 +1,21 @@
 ---
 import AuthBrand from "../components/auth/AuthBrand";
-import LoginCard from "../components/auth/LoginCard";
+import RegisterCard from "../components/auth/RegisterCard";
 import AuthLayout from "../layouts/AuthLayout.astro";
 ---
 
-<AuthLayout title="SnapLink | Iniciar Sesion" description="Inicia sesion en SnapLink para administrar tus enlaces.">
+<AuthLayout title="SnapLink | Crear cuenta" description="Crea tu cuenta en SnapLink para administrar y proteger tus enlaces.">
 	<div class="relative grid min-h-svh place-items-center overflow-hidden px-4 py-8 sm:px-6">
 		<div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.09),transparent_42%),radial-gradient(circle_at_80%_85%,rgba(79,70,229,0.08),transparent_40%)]"></div>
 
 		<div class="relative z-10 flex w-full max-w-xl flex-col items-center gap-7">
 			<AuthBrand />
 			<div class="w-full">
-				<LoginCard />
+				<RegisterCard />
 			</div>
 			<p class="text-center text-base text-slate-500 sm:text-lg">
-				No tienes una cuenta?
-				<a href="/register" class="ml-2 font-semibold text-[#6d4cff] transition hover:text-[#5b39f1]">Registrate gratis</a>
+				Ya tienes una cuenta?
+				<a href="/login" class="ml-2 font-semibold text-[#6d4cff] transition hover:text-[#5b39f1]">Inicia sesion aqui</a>
 			</p>
 		</div>
 	</div>
