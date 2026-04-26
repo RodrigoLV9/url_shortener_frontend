@@ -29,6 +29,7 @@ src/
 - `/caracteristicas`
 - `/precios`
 - `/contacto`
+- `/login`
 
 ## Comandos
 

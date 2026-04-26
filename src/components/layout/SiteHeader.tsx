@@ -25,9 +25,12 @@ export default function SiteHeader() {
 				</nav>
 
 				<div className="flex items-center gap-2">
-					<button className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:text-base">
+					<a
+						href="/login"
+						className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:text-base"
+					>
 						Iniciar Sesion
-					</button>
+					</a>
 					<button className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#4f46e5] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 sm:text-base">
 						Registrarse
 					</button>
