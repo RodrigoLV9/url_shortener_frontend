@@ -1,17 +1,17 @@
 ---
+import CtaSection from "../components/home/CtaSection";
+import HeroSection from "../components/home/HeroSection";
+import ToolsSection from "../components/home/ToolsSection";
+import ValuePropsSection from "../components/home/ValuePropsSection";
+import MainLayout from "../layouts/MainLayout.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="SnapLink | Acortador de URLs" description="Acorta, comparte y analiza enlaces en segundos.">
+	<div class="mx-auto flex w-full max-w-6xl flex-col px-4 pb-14 pt-16 sm:px-6 sm:pt-20 lg:px-8">
+		<HeroSection />
+		<ValuePropsSection />
+		<ToolsSection />
+		<CtaSection />
+	</div>
+</MainLayout>
