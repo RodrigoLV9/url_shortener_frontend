@@ -1,0 +1,33 @@
+---
+import PageIntro from "../components/shared/PageIntro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Contacto | SnapLink" description="Habla con nuestro equipo para demos, soporte o alianzas.">
+	<div class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 pb-14 pt-16 sm:px-6 lg:px-8">
+		<PageIntro
+			title="Hablemos de tu proyecto"
+			description="Comparte tus objetivos y te ayudamos a disenar el flujo de enlaces ideal para tu negocio."
+		/>
+
+		<section class="mx-auto w-full max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+			<form class="grid grid-cols-1 gap-5">
+				<label class="text-sm font-semibold text-slate-700">
+					Nombre
+					<input class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3" type="text" placeholder="Tu nombre" />
+				</label>
+				<label class="text-sm font-semibold text-slate-700">
+					Email
+					<input class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3" type="email" placeholder="tu@email.com" />
+				</label>
+				<label class="text-sm font-semibold text-slate-700">
+					Mensaje
+					<textarea class="mt-2 min-h-36 w-full rounded-xl border border-slate-200 px-4 py-3" placeholder="Cuentanos que quieres construir"></textarea>
+				</label>
+				<button type="button" class="rounded-xl bg-linear-to-r from-[#7c3aed] to-[#4f46e5] px-5 py-3 font-semibold text-white">
+					Enviar mensaje
+				</button>
+			</form>
+		</section>
+	</div>
+</MainLayout>

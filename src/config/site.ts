@@ -8,13 +8,6 @@ export type FooterGroup = {
 	links: NavItem[];
 };
 
-export const MAIN_NAV: NavItem[] = [
-	{ label: "Inicio", href: "/" },
-	{ label: "Caracteristicas", href: "/caracteristicas" },
-	{ label: "Precios", href: "/precios" },
-	{ label: "Contacto", href: "/contacto" },
-];
-
 export const FOOTER_GROUPS: FooterGroup[] = [
 	{
 		title: "Producto",

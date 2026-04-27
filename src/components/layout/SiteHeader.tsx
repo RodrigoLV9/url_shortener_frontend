@@ -1,5 +1,4 @@
 import { Link2 } from "lucide-react";
-import { MAIN_NAV } from "../../config/site";
 
 export default function SiteHeader() {
 	return (
@@ -12,18 +11,6 @@ export default function SiteHeader() {
 					<span className="text-2xl font-extrabold tracking-tight text-slate-800">SnapLink</span>
 				</a>
 
-				<nav className="hidden items-center gap-7 md:flex" aria-label="Principal">
-					{MAIN_NAV.map((item) => (
-						<a
-							key={item.label}
-							href={item.href}
-							className="text-base font-semibold text-slate-500 transition hover:text-slate-800"
-						>
-							{item.label}
-						</a>
-					))}
-				</nav>
-
 				<div className="flex items-center gap-2">
 					<a
 						href="/login"
@@ -31,9 +18,12 @@ export default function SiteHeader() {
 					>
 						Iniciar Sesion
 					</a>
-					<button className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#4f46e5] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 sm:text-base">
+					<a
+					href="/register"
+					className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#4f46e5] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-95 sm:text-base"
+					>
 						Registrarse
-					</button>
+					</a>
 				</div>
 			</div>
 		</header>
