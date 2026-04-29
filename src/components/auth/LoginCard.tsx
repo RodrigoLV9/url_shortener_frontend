@@ -3,8 +3,35 @@ import { LOGIN_SOCIAL_PROVIDERS } from "../../config/auth";
 import FormField from "./FormField";
 import SocialButton from "./SocialButton";
 import SocialProviderIcon from "./SocialProviderIcon";
-
 export default function LoginCard() {
+	const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(event.currentTarget);
+		const email = String(formData.get("email") ?? "").trim();
+		const password = String(formData.get("password") ?? "");
+
+		try {
+			const response = await fetch("http://localhost:3000/auth/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email, password }),
+			});
+
+			const data = await response.json();
+			if (response.ok) {
+				console.log("Login exitoso", data);
+				// TODO: guardar token / redirigir según tu flujo
+			} else {
+				console.error("Error en el login", data);
+			}
+		} catch (error) {
+			console.error("Error en la solicitud:", error);
+		}
+	};
+
 	return (
 		<section className="mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white px-6 py-8 shadow-[0_14px_36px_rgba(15,23,42,0.08)] sm:px-8 sm:py-9">
 			<header className="text-center">
@@ -24,7 +51,7 @@ export default function LoginCard() {
 				<div className="h-px flex-1 bg-slate-200" />
 			</div>
 
-			<form className="mt-6 space-y-5" method="post" action="#">
+			<form className="mt-6 space-y-5" method="post" action="#" onSubmit={handleSubmit}>
 				<FormField
 					id="email"
 					name="email"

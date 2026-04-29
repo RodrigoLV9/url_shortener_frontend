@@ -11,7 +11,7 @@ import AuthLayout from "../layouts/AuthLayout.astro";
 		<div class="relative z-10 flex w-full max-w-xl flex-col items-center gap-7">
 			<AuthBrand />
 			<div class="w-full">
-				<RegisterCard />
+				<RegisterCard client:only />
 			</div>
 			<p class="text-center text-base text-slate-500 sm:text-lg">
 				Ya tienes una cuenta?

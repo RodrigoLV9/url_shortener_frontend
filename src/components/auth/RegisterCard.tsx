@@ -3,8 +3,43 @@ import { LOGIN_SOCIAL_PROVIDERS } from "../../config/auth";
 import FormField from "./FormField";
 import SocialButton from "./SocialButton";
 import SocialProviderIcon from "./SocialProviderIcon";
-
 export default function RegisterCard() {
+	const handleSubmit: React.SubmitEventHandler<HTMLFormElement> = async (event) => {
+		event.preventDefault();
+
+		const formData = new FormData(event.currentTarget);
+		const name = String(formData.get("fullName") ?? "").trim();
+		const email = String(formData.get("email") ?? "").trim();
+		const password = String(formData.get("password") ?? "");
+		const confirmPassword = String(formData.get("confirmPassword") ?? "");
+
+		if (password !== confirmPassword) {
+			console.error("Las contrasenas no coinciden");
+			return;
+		}
+
+		try {
+			const response = await fetch("http://localhost:3000/auth/register", {
+			  method: "POST",
+			  headers: {
+				"Content-Type": "application/json"
+			  },
+			  body: JSON.stringify({
+				name,
+				email,
+				password,
+			  })
+			})
+			await response.json();
+			if (response.ok) {
+			  console.log("Registro exitoso");
+			} else {
+			  return console.error("Error en el registro");
+			}
+			} catch (error) {
+				console.error("Error en la solicitud:", error);
+			}
+			}
 	return (
 		<section className="mx-auto w-full max-w-xl rounded-3xl border border-slate-200 bg-white px-6 py-8 shadow-[0_14px_36px_rgba(15,23,42,0.08)] sm:px-8 sm:py-9">
 			<header className="text-center">
@@ -24,7 +59,7 @@ export default function RegisterCard() {
 				<div className="h-px flex-1 bg-slate-200" />
 			</div>
 
-			<form className="mt-6 space-y-5" method="post" action="#">
+			<form className="mt-6 space-y-5" method="post" action="#" onSubmit={handleSubmit}>
 				<FormField
 					id="fullName"
 					name="fullName"
@@ -80,7 +115,7 @@ export default function RegisterCard() {
 						type="checkbox"
 						name="terms"
 						required
-						className="mt-[3px] h-4 w-4 rounded border-slate-300 text-[#6d4cff] focus:ring-[#6d4cff]/30"
+						className="mt-0.75 h-4 w-4 rounded border-slate-300 text-[#6d4cff] focus:ring-[#6d4cff]/30"
 					/>
 					<span>
 						Acepto los{" "}
