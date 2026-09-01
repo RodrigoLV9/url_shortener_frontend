@@ -66,7 +66,7 @@ export default function LoginCard() {
 						<label htmlFor="password" className="text-sm font-semibold text-slate-700 sm:text-base">
 							Contrasena
 						</label>
-						<a href="#" className="text-xs font-semibold text-[#6d4cff] transition hover:text-[#5b39f1] sm:text-sm">
+						<a href="/recuperar-contrasena" className="text-xs font-semibold text-[#6d4cff] transition hover:text-[#5b39f1] sm:text-sm">
 							Olvidaste tu contrasena?
 						</a>
 					</div>

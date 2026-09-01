@@ -1,0 +1,33 @@
+---
+import AuthBrand from "../components/auth/AuthBrand";
+import ForgotPasswordCard from "../components/auth/ForgotPasswordCard";
+import AuthLayout from "../layouts/AuthLayout.astro";
+---
+
+<AuthLayout
+  title="SnapLink | Recuperar contraseña"
+  description="Recupera tu contraseña en SnapLink y restablece el acceso a tu cuenta."
+>
+  <div
+    class="relative grid min-h-svh place-items-center overflow-hidden px-4 py-8 sm:px-6"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(124,58,237,0.09),transparent_42%),radial-gradient(circle_at_80%_85%,rgba(79,70,229,0.08),transparent_40%)]"
+    >
+    </div>
+
+    <div class="relative z-10 flex w-full max-w-xl flex-col items-center gap-7">
+      <AuthBrand />
+      <div class="w-full">
+        <ForgotPasswordCard client:load />
+      </div>
+      <a
+        href="/login"
+        class="inline-flex items-center gap-2 text-base font-medium text-slate-600 transition hover:text-slate-800"
+      >
+        <span aria-hidden="true">←</span>
+        <span>Volver al inicio de sesión</span>
+      </a>
+    </div>
+  </div>
+</AuthLayout>
